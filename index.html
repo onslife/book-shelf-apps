@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>BookShelf Apps</title>
+  </head>
+  <body>
+    <header>
+
+      <h2>BookShelf Apps</h2>
+    </header>
+    <main>
+      <section class="input-section">
+        <button class="tambah-buku" type="button">Masukan Buku Baru</button>
+        <div class="container-inputBook">
+          <form id="inputBook" autocomplete="off" onsubmit="return addBook()">
+            <h3>Masukan Buku Baru</h3>
+            <div class="input">
+              <label for="inputBookTitle">Judul</label>
+              <input id="inputBookTitle" type="text" required />
+            </div>
+            <div class="input">
+              <label for="inputBookAuthor">Penulis</label>
+              <input id="inputBookAuthor" type="text" required />
+            </div>
+            <div class="input">
+              <label for="inputBookYear">Tahun</label>
+              <input id="inputBookYear" type="number" required />
+            </div>
+            <div class="input_inline">
+              <label for="inputBookIsComplete">Selesai dibaca </label>
+              <input id="inputBookIsComplete" type="checkbox" />
+            </div>
+            <button id="bookSubmit" type="submit">
+              Masukkan Buku ke rak <span>Belum selesai dibaca</span>
+            </button>
+            <span class="close-btn">X</span>
+          </form>
+        </div>
+      </section>
+      <section class="search-section">
+        <form id="searchBook" onsubmit="return searchBook()">
+          <input
+            type="text"
+            id="searchBookTitle"
+            placeholder="Cari buku berdasarkan judul"
+          />
+          <button class="searchSubmit">Cari</button>
+        </form>
+        <div class="resultSearch"></div>
+      </section>
+      <section class="book-shelf">
+        <div class="incomplete">
+          <h2>Belum selesai dibaca</h2>
+          <hr style="border: 1px solid rgba(255, 255, 255, 0.249)" />
+          <br />
+          <div id="incompleteBookshelfList"></div>
+        </div>
+        <div class="complete">
+          <h2>Selesai dibaca</h2>
+          <hr style="border: 1px solid rgba(255, 255, 255, 0.249)" />
+          <br />
+          <div id="completeBookshelfList"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
