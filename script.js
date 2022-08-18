@@ -7,6 +7,9 @@ const completeBook = document.querySelector('#completeBookshelfList')
 const bookSubmit = document.querySelector('#bookSubmit')
 const isComplete = document.querySelector('#inputBookIsComplete')
 const contSearch = document.querySelector('.resultSearch')
+const darkMode = document.querySelector('#dark-mode')
+
+
 
 const dataBookKey = 'DATA_BOOK_KEY'
 

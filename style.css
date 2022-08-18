@@ -8,11 +8,7 @@
 }
 
 body {
-  background: linear-gradient(
-    to bottom right,
-    rgb(34, 34, 34) 80%,
-    rgba(0, 0, 0, 0.888)
-  );
+  background-color: rgb(25, 25, 25);
   min-height: 100vh;
 }
 
@@ -21,7 +17,7 @@ body {
   opacity: 1;
 }
 
-:-ms-input-placeholder { 
+:-ms-input-placeholder {
   color: rgb(156, 156, 156);
 }
 
@@ -54,8 +50,9 @@ header {
   display: flex;
   justify-content: center;
   padding: 15px 0;
-  background: linear-gradient(to bottom right, #333, rgba(43, 43, 43, 0.944));
+  background: linear-gradient(to bottom right, #222, rgba(43, 43, 43, 0.944));
   color: #ddd;
+  box-shadow: 0 0 20px rgb(93, 93, 93);
 }
 
 .tambah-buku {
@@ -131,27 +128,34 @@ header {
   flex: 1;
   margin: 0 5px;
 }
-
 .book_item {
   padding: 10px 20px;
   border-radius: 5px;
   width: 100%;
   margin: 10px 2.5px;
-  animation: fadeIn 0.2s ease-in-out ;
+  animation: fadeIn 0.2s ease-in-out;
   transition: transform 0.5s ease-in-out 0.1s, height 0.3s linear;
   background-color: rgb(52, 52, 52);
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  transition: .3s ease-in-out;
+}
+.book_item:hover{
+  border-left: 3px solid rgba(255, 255, 255, 0.603);
+  border-right: 3px solid rgba(255, 255, 255, 0.603);
+  box-shadow: 0 0 10px #9090908a;
 }
 .book_item.deleted {
   transform: scale(0);
 }
-.resultSearch{
+.resultSearch {
   width: 100%;
 }
-.resultSearch h2{
+.resultSearch h2 {
   text-align: center !important;
 }
 
-#resultSearch{
+#resultSearch {
   border-radius: 10px;
   margin-top: 10px;
   display: flex;
@@ -160,7 +164,7 @@ header {
   padding: 0 5px;
 }
 
-.resultSearch .book_item{
+.resultSearch .book_item {
   width: 60%;
   margin: 0 auto;
 }
@@ -175,11 +179,11 @@ header {
   flex-wrap: wrap;
   padding: 0 5px;
 }
-#incompleteBookshelfList:hover {
+/* #incompleteBookshelfList:hover {
   border-left: 2px solid rgba(255, 255, 255, 0.603);
   border-right: 2px solid rgba(255, 255, 255, 0.603);
   box-shadow: 0 0 10px #9090908a;
-}
+} */
 #completeBookshelfList {
   transition: border 0.3s ease-in-out, box-shadow 0.2s linear 0.1s;
   border-left: 2px solid transparent;
@@ -190,12 +194,11 @@ header {
   padding: 0 5px;
   flex-wrap: wrap;
 }
-#completeBookshelfList:hover {
+/* #completeBookshelfList:hover {
   border-left: 2px solid rgba(255, 255, 255, 0.603);
   border-right: 2px solid rgba(255, 255, 255, 0.603);
   box-shadow: 0 0 10px #9090908a;
-}
-
+} */
 
 .container-inputBook {
   position: fixed;
@@ -210,13 +213,12 @@ header {
   align-items: center;
   transition: 0.3s ease-in-out;
 }
-.container-inputBook:hover{
+.container-inputBook:hover {
   cursor: default;
 }
 .container-inputBook.active {
   transform: scale(1) translateY(0);
   backdrop-filter: blur(2px);
-  background-color: rgba(52, 50, 50, 0.653);
 }
 
 .container-inputBook form {
@@ -297,16 +299,21 @@ header {
   margin: 8px 0;
 }
 
-button,div.orange,div.red ,div.green{
+button,
+div.orange,
+div.red,
+div.green {
   display: inline-block;
   margin: 3px 0;
   color: rgb(239, 239, 239);
   padding: 5px 10px;
   border: 0;
-  transition: .2s ease-in-out;
+  transition: 0.2s ease-in-out;
   border-radius: 5px;
 }
-div.orange:hover,div.red:hover,div.green:hover{
+div.orange:hover,
+div.red:hover,
+div.green:hover {
   cursor: pointer;
   color: rgb(44, 44, 44);
 }
@@ -317,22 +324,20 @@ button:hover {
 
 .green:hover {
   background-color: rgb(57, 215, 57);
-  color: #ddd;
 }
 .red:hover {
   background-color: rgb(225, 72, 55);
-  color: #ddd;
 }
 .orange:hover {
   background-color: rgb(224, 143, 57);
 }
 .green {
   background-color: rgb(46, 174, 46);
-  color: #ddd;
+  color: #fff;
 }
 .red {
   background-color: rgb(176, 56, 42);
-  color: #ddd;
+  color: #fff;
 }
 .orange {
   background-color: rgb(176, 111, 42);
@@ -357,6 +362,13 @@ button:hover {
   border: 0;
   outline: none;
 }
+.incomplete h2 {
+  color: rgb(240, 105, 105);
+}
+
+.complete h2 {
+  color: rgb(106, 236, 106);
+}
 
 #searchBook {
   display: flex;
@@ -373,9 +385,9 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: zoom 0.3s linear;
+  animation: zoom 0.5s linear;
   backdrop-filter: blur(3px);
-  transition: 0.1s linear ;
+  transition: 0.1s linear;
 }
 .dialog-container.deleted {
   transform: scale(0);
@@ -407,13 +419,13 @@ button:hover {
   0% {
     scale: 0;
   }
-  25%{
-    scale: 1.1;
+  25% {
+    scale: 1.15;
   }
-  50%{
+  50% {
     scale: 1;
   }
-  75%{
+  75% {
     scale: 1.1;
   }
   100% {
@@ -429,27 +441,27 @@ button:hover {
   }
 }
 
-@media (max-width : 900px) {
-  .book-shelf{
+@media (max-width: 900px) {
+  .book-shelf {
     display: block;
   }
-  .complete{
-    margin: 30px 5px
+  .complete {
+    margin: 30px 5px;
   }
   .container-inputBook form {
     width: 90%;
     padding: 0 20px;
   }
-  .container-inputBook form .input{
+  .container-inputBook form .input {
     width: 100%;
   }
-  #searchBook{
+  #searchBook {
     width: 100%;
   }
-  .resultSearch .book_item{
+  .resultSearch .book_item {
     width: 100% !important;
   }
-  .container-inputBook form .input input{
+  .container-inputBook form .input input {
     width: 250px;
   }
 }

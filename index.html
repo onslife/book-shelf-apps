@@ -10,12 +10,11 @@
   </head>
   <body>
     <header>
-
       <h2>BookShelf Apps</h2>
     </header>
     <main>
       <section class="input-section">
-        <button class="tambah-buku" type="button">Masukan Buku Baru</button>
+        <button class="tambah-buku" type="button"><i class="fa-solid fa-circle-plus"></i> Masukan Buku Baru</button>
         <div class="container-inputBook">
           <form id="inputBook" autocomplete="off" onsubmit="return addBook()">
             <h3>Masukan Buku Baru</h3>
@@ -49,19 +48,19 @@
             id="searchBookTitle"
             placeholder="Cari buku berdasarkan judul"
           />
-          <button class="searchSubmit">Cari</button>
+          <button class="searchSubmit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
         <div class="resultSearch"></div>
       </section>
       <section class="book-shelf">
         <div class="incomplete">
-          <h2>Belum selesai dibaca</h2>
+          <h2><i class="fa-solid fa-circle-xmark"></i> Belum selesai dibaca</h2>
           <hr style="border: 1px solid rgba(255, 255, 255, 0.249)" />
           <br />
           <div id="incompleteBookshelfList"></div>
         </div>
         <div class="complete">
-          <h2>Selesai dibaca</h2>
+          <h2><i class="fa-solid fa-circle-check"></i> Selesai dibaca</h2>
           <hr style="border: 1px solid rgba(255, 255, 255, 0.249)" />
           <br />
           <div id="completeBookshelfList"></div>
